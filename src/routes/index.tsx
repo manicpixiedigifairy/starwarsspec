@@ -199,7 +199,7 @@ function Index() {
         <div className="animate-crawl absolute inset-x-0 mx-auto max-w-2xl text-center font-display text-2xl font-bold leading-relaxed text-primary md:text-4xl">
           <p className="mb-8">Episode I</p>
           <p className="mb-8 text-5xl">SUPER FAN FRENZY</p>
-          <p>These days niche culture is en vogue and super fans set the tone. To promote the expansion of the world's biggest franchise, we will mobilize the Star Warriors and create a groundswell around the film's release…</p>
+          <p>To promote the expansion of the world's biggest franchise, we will mobilize the Star Warriors and create a groundswell around the film's release…</p>
         </div>
       </section>
 
