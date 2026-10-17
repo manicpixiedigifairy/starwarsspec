@@ -2,14 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import hero from "@/assets/star-wars-logo.png";
-import droids from "@/assets/sw-image22.jpeg.asset.json";
-import poster from "@/assets/sw-image26.jpeg.asset.json";
-import t1 from "@/assets/sw-image43.jpeg.asset.json";
-import t2 from "@/assets/sw-image38.jpeg.asset.json";
-import t3 from "@/assets/sw-image42.jpeg.asset.json";
-import kylo from "@/assets/sw-image49.jpeg.asset.json";
-import lego from "@/assets/sw-image65.jpeg.asset.json";
-import reviews from "@/assets/sw-image82.jpeg.asset.json";
+import droids from "@/assets/sw-image22.jpeg";
+import poster from "@/assets/sw-image26.jpeg";
+import t1 from "@/assets/sw-image43.jpeg";
+import t2 from "@/assets/sw-image38.jpeg";
+import t3 from "@/assets/sw-image42.jpeg";
+import kylo from "@/assets/sw-image49.jpeg";
+import lego from "@/assets/sw-image65.jpeg";
+import reviews from "@/assets/sw-image82.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,7 +103,7 @@ function Stat({ value, label }: { value: number; label: string }) {
 
 const phases = [
   {
-    n: "I", name: "Drop the Trailer", tag: "Trailer Release", title: "Twitch Watch Party 🍿", img: kylo.url,
+    n: "I", name: "Drop the Trailer", tag: "Trailer Release", title: "Twitch Watch Party 🍿", img: kylo,
     body: [
       "We'll invite fans across the world to a live watch party where they can experience reactions from their fave streamers in real time.",
       "The event will also include pre-show gaming experiences and trivia segments. In each head to head battle, fans will have a chance to win exclusive tickets for our irl film premiere.",
@@ -111,7 +111,7 @@ const phases = [
     creators: ["Nia D (@starwarstheoryl)", "Anna Mello (@thatstarwarsgirl)"],
   },
   {
-    n: "II", name: "Build Buzz", tag: "Experiential", title: "Airbnb Lego Museum 🖼️", img: lego.url,
+    n: "II", name: "Build Buzz", tag: "Experiential", title: "Airbnb Lego Museum 🖼️", img: lego,
     body: [
       "We'll work with Lego, Airbnb, and a selection of prop artists from the show to create an experiential homage to the franchise with a special focus on its latest film.",
       "The museum will feature Lego replicas of real film props, interactive AR experiences, and Lego building workshops with the pros.",
@@ -120,7 +120,7 @@ const phases = [
     creators: ["Ethan The Artisan (@ethan.the.artisan)", "Serena Neel (@serenaneel)"],
   },
   {
-    n: "III", name: "Keep 'em Talking", tag: "Post Release", title: "Editorial Fan Reviews ✍️", img: reviews.url,
+    n: "III", name: "Keep 'em Talking", tag: "Post Release", title: "Editorial Fan Reviews ✍️", img: reviews,
     body: [
       "Fans can also be the best critics. To keep people talking after release, we'll invite fans to write reviews on Letterboxd and share them on social.",
       "Popular IG and TT movie reviewers kick off with their takes, then invite audiences to stitch, duet, remix, or reply with green screen videos.",
@@ -204,7 +204,7 @@ function Index() {
       </section>
 
       <section id="brief" className="grid min-h-screen items-center gap-10 px-6 md:grid-cols-2 md:px-16">
-        <Reveal><img src={droids.url} alt="R2-D2 and C-3PO" className="w-full rounded" /></Reveal>
+        <Reveal><img src={droids} alt="R2-D2 and C-3PO" className="w-full rounded" /></Reveal>
         <Reveal className="space-y-6">
           <Kicker>01 — The Brief</Kicker>
           <p className="text-3xl leading-snug md:text-4xl">Drive awareness and excitement around the release of Disney's upcoming <span className="text-primary">Star Wars</span> movie.</p>
@@ -226,7 +226,7 @@ function Index() {
       </section>
 
       <section className="grid min-h-screen items-center gap-10 px-6 md:grid-cols-2 md:px-16">
-        <Reveal><img src={poster.url} alt="Star Wars poster" className="mx-auto max-h-[85vh] rounded" /></Reveal>
+        <Reveal><img src={poster} alt="Star Wars poster" className="mx-auto max-h-[85vh] rounded" /></Reveal>
         <Reveal className="space-y-6">
           <H2>Super Fans<br /><span className="text-primary">Show Up!!</span></H2>
           <p className="text-lg text-muted-foreground">Super fans invest in the things they love with their time, money, platforms, and social capital.</p>
@@ -250,7 +250,7 @@ function Index() {
           <p className="text-muted-foreground">We'll lean full <em className="font-bold text-primary">force</em> into mobilizing current Star Warriors, in order to penetrate culture and create a groundswell around the film's release. Because when Star Wars fans get excited, everyone else has no choice but to get aboard the mothership.</p>
         </Reveal>
         <div className="relative space-y-12 border-l-2 border-saber pl-10">
-          {[["Launch with a bang 🚀", t1.url], ["Start some buzz", t2.url], ["Keep 'em talking", t3.url]].map(([l, src]) => (
+          {[["Launch with a bang 🚀", t1], ["Start some buzz", t2], ["Keep 'em talking", t3]].map(([l, src]) => (
             <Reveal key={l} className="relative">
               <span className="absolute -left-[49px] top-2 h-4 w-4 rounded-full bg-saber saber-glow" />
               <p className="mb-3 font-display text-sm uppercase tracking-widest">{l}</p>

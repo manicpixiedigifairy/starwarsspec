@@ -11,5 +11,13 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // Prerender the landing page to static HTML so it can be hosted on GitHub Pages.
+    pages: [{ path: "/", prerender: { enabled: true } }],
+  },
+  vite: {
+    // Relative asset paths so the build works both on Lovable and on GitHub Pages
+    // (which serves the site under /starwarsspec/). GITHUB_PAGES=1 pins the
+    // absolute prefix for the Pages build.
+    base: process.env.GITHUB_PAGES ? "/starwarsspec/" : "./",
   },
 });
