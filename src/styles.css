@@ -41,20 +41,20 @@
   --card-foreground: oklch(0.96 0 0);
   --popover: oklch(0.13 0 0);
   --popover-foreground: oklch(0.96 0 0);
-  --primary: oklch(0.88 0.17 95);
+  --primary: oklch(0.92 0.19 102);
   --primary-foreground: oklch(0.1 0 0);
   --secondary: oklch(0.18 0 0);
   --secondary-foreground: oklch(0.96 0 0);
   --muted: oklch(0.18 0 0);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.88 0.17 95);
+  --accent: oklch(0.92 0.19 102);
   --accent-foreground: oklch(0.1 0 0);
   --destructive: oklch(0.6 0.24 27);
   --destructive-foreground: oklch(0.98 0 0);
   --saber: oklch(0.62 0.26 27);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.88 0.17 95);
+  --ring: oklch(0.92 0.19 102);
 }
 
 @layer base {
@@ -85,3 +85,16 @@
   to { transform: rotateX(25deg) translateY(-160%); }
 }
 @utility animate-crawl { animation: crawl 40s linear infinite; }
+
+@keyframes seg-light {
+  0%, 100% { opacity: 0.15; }
+  8% { opacity: 1; box-shadow: 0 0 10px color-mix(in oklch, var(--primary) 70%, transparent); }
+  16% { opacity: 0.15; box-shadow: none; }
+}
+@utility animate-seg { animation: seg-light 1.6s linear infinite; }
+
+@keyframes game-blink {
+  0%, 55% { opacity: 1; }
+  56%, 100% { opacity: 0; }
+}
+@utility animate-game-blink { animation: game-blink 1s steps(1) infinite; }

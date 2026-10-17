@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-import hero from "@/assets/sw-image1.jpeg.asset.json";
+import hero from "@/assets/star-wars-logo.png";
 import droids from "@/assets/sw-image22.jpeg.asset.json";
 import poster from "@/assets/sw-image26.jpeg.asset.json";
 import t1 from "@/assets/sw-image43.jpeg.asset.json";
@@ -167,16 +167,32 @@ function Index() {
       <Starfield />
 
       <section className="relative flex h-screen flex-col items-center justify-center text-center">
-        <img
-          src={hero.url}
-          alt="Star Wars"
-          className="relative w-full max-w-4xl object-contain [mask-image:radial-gradient(ellipse_72%_78%_at_center,black_55%,transparent_98%)]"
-        />
-        <div className="relative space-y-2 px-4">
-          <p className="font-display text-xl tracking-[0.3em] text-foreground">FILM LAUNCH</p>
-          <p className="text-xs tracking-[0.4em] text-muted-foreground">AWARENESS CAMPAIGN</p>
+        <div className="absolute left-1/2 top-6 z-10 -translate-x-1/2 px-4">
+          <div className="flex flex-col items-center gap-1.5 rounded-full border border-primary/60 bg-background/50 px-7 py-2.5 backdrop-blur-sm">
+            <p className="font-display text-sm tracking-[0.35em] text-primary">FILM LAUNCH</p>
+            <p className="text-[10px] tracking-[0.45em] text-muted-foreground">AWARENESS CAMPAIGN</p>
+          </div>
         </div>
-        <a href="#brief" className="absolute bottom-8 animate-bounce text-sm tracking-widest text-primary">SCROLL TO ENGAGE ↓</a>
+        <img
+          src={hero}
+          alt="Star Wars"
+          className="relative w-full max-w-4xl object-contain drop-shadow-[0_0_28px_rgba(255,232,31,0.3)]"
+        />
+        <a href="#brief" aria-label="Scroll to engage" className="group absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-3">
+          <div className="flex items-end gap-[5px]" aria-hidden="true">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <span
+                key={i}
+                className="animate-seg h-3 w-[6px] skew-x-[-14deg] bg-primary"
+                style={{ animationDelay: `${(i % 8) * 0.14 + Math.floor(i / 8) * 0.03}s` }}
+              />
+            ))}
+          </div>
+          <p className="font-display text-sm tracking-[0.35em] text-primary">
+            <span className="group-hover:glow-primary">SCROLL TO ENGAGE</span>
+          </p>
+          <span className="animate-game-blink text-xs text-primary" aria-hidden="true" style={{ animationDelay: '0.5s' }}>▼</span>
+        </a>
       </section>
 
       <section className="relative h-[80vh] overflow-hidden [perspective:400px]">
